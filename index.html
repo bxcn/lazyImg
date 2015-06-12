@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LazyImgv1.0图片延迟加载插件</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <script type="text/javascript" src="js/lazyImg.v1.0.min.js"></script>
+  </head>
+  <body>
+   <h1 class="tit auto"><img src="images/default.png" lazy-data="images/tit.png" width="460" height="160" alt="LazyImgv1.0图片延迟加载插件" /></h1>
+    <div class="lz_box auto">
+     <p>
+       <em class="red fb">注：</em>LazyImg 必须定义lazy-data属性，属性值是src的图片路径
+     </p>
+     <p>
+       <em class="red fb">引入JS文件：</em>&lt;script type="text/javascript" src="js/lazyImg.v1.0.js"&gt;&lt;/script&gt;
+     </p>
+     <p>
+       <em class="fb">下载地址：</em>
+       <a class="red" href="js/lazyImg.v1.0.min.js" target="_blank">点击它(压缩版)！</a>
+       <a class="red" href="lazyImg.v1.0.zip" target="_blank">点击它(完整版)！</a>
+     </p>
+   </div>
+   <div class="lz_box auto">
+     <p>
+       默认情况下: 在IMG中满足以任何一个条件，都会加载图片；
+     </p>
+     <p>
+       1、没有class属性
+     </p>
+     <p>
+       2、如果有class属性并且属性中不包含以"lazy-"为前缀的css样式名
+     </p>
+   </div>
+   <div class="lz_box auto">
+     <p>
+      如何禁止默认加载图片
+     </p>
+     <p>
+       <em class="red fb">JS代码:  </em>LzDefault.action = false;
+     </p>
+   </div>
+   <div class="lz_box auto">
+     <p>
+      如何在点击事件时显示图片
+     </p>
+     <p>
+        <em class="red fb">JS代码:  </em>LazyImg.lazy("lazy-name");
+     </p>
+     <p>
+       &lt;img class="lazy-name" lazy-data="图片路径"/&gt;
+     </p>
+      <p>
+        <em class="red fb">"lazy-name"  </em>中的name是可以自定义，"lazy-"是前缀必须存在
+     </p>
+   </div>
+   <ol class="list auto">
+     <li class="fore1"><img  src="images/default.png" lazy-data="images/1.png" width="161" height="161" alt="1"/></li>
+     <li class="fore2"><img  src="images/default.png" lazy-data="images/2.png" width="161" height="161" alt="2"/></li>
+     <li class="fore3"><img  src="images/default.png" lazy-data="images/3.png" width="161" height="161" alt="3"/></li>
+     <li class="fore4"><img class="lazy-456"  src="images/default.png" lazy-data="images/4.png" width="161" height="161" alt="4"/></li>
+     <li class="fore5"><img class="lazy-456"  src="images/default.png" lazy-data="images/5.png" width="161" height="161" alt="5"/></li>
+     <li class="fore6"><img class="lazy-456"  src="images/default.png" lazy-data="images/6.png" width="161" height="161" alt="6"/></li>
+     <li class="fore7"><img  src="images/default.png" lazy-data="images/7.png" width="161" height="161" alt="7"/></li>
+     <li class="fore8"><img  src="images/default.png" lazy-data="images/8.png" width="161" height="161" alt="8"/></li>
+     <li class="fore9"><img  src="images/default.png" lazy-data="images/9.png" width="161" height="161" alt="9"/></li>
+   </ol>
+   <div class="lz_box auto">
+     <p>
+      默认加载了1、2、3、7、8、9图片，当点击下面的按钮时会加载 4、5、6图片
+     </p>
+     <p>
+        <img class="click_img" onclick="showImg()" src="images/default.png" lazy-data="images/click.png" width="184" height="48" /> 
+     </p>
+   </div>
+   <div class="white_div"></div>
+   <script>
+    var showImg = function() {
+      LazyImg.lazy("lazy-456");
+    }
+    //  以下定义默认不执行延迟加载
+    //  LzDefault.action = false;
+  </script> 
+  </body>
+</html>
+
